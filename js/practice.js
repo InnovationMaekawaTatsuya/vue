@@ -28,6 +28,14 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             
         },
+        methods: {
+            doBuy: function() {
+                alert(this.totalPriceWithTax + '円お買い上げ！')
+                this.items.forEach(function(item) {
+                    item.quantity = 0
+                })
+            }
+        },
         computed: {
             totalPrice: function() {
                 return this.items.reduce(function (sum, item) {
